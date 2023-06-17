@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
+from rest_framework.authentication import TokenAuthentication
+
 from .serializers import UserSerializer, PostSerializer
 from .models import Post
 from .permissions import IsOwnerOrReadOnly
@@ -36,3 +38,4 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    # authentication_classes = (TokenAuthentication, )
