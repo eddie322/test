@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api.apps.ApiConfig',
-    'rest_framework_social_oauth2'
+    # 'rest_framework_social_oauth2'
 ]
 
 MIDDLEWARE = [
@@ -126,16 +126,16 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-    
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-}
+# REST_FRAMEWORK = {
+#
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+# }
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '962396404392-5i0qi2mteub1nvquhh8ss5ik87tnc4co.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '962396404392-5i0qi2mteub1nvquhh8ss5ik87tnc4co.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
