@@ -12,8 +12,10 @@ urlpatterns = [
     # path('auth/token/', TokenView.as_view(), name='token'),
 
     path('drf-auth/', include('rest_framework.urls')),  # Встроенная аутентификация
-    path('auth/', include('djoser.urls')),
-    re_path(r'^auth/', include('djoser.urls.authtoken')),  # auth/token/login
+    # path('auth/', include('djoser.urls')),
+    # re_path(r'^auth/', include('djoser.urls.authtoken')),  # auth/token/login
+    re_path(r'^auth/', include('drf_social_oauth2.urls', namespace='drf')),  # Oauth
+    re_path(r'^auth1/', include('social_django.urls', namespace='social')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('token/verify/', TokenVerifyView.as_view(), name='token_verify'),
